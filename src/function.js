@@ -11,7 +11,7 @@ function main(number) {
     var list = '';
 
     for(let i = 0; i < combinations.length; i++){
-        list = list + '  ' + combinations[i];
+        list = list + '(' + combinations[i] + ') ';
     }
 
     return list;

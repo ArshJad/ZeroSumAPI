@@ -11,17 +11,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/', (req, res) => {
+app.post('/zero-sum', (req, res) => {
     var a = parseInt(req.body.n);
-    const getData = async() => {
-        var y = await func.main(a);;
-        console.log(y);
-    }
-    var b = JSON.stringify(a);
-    getData();
+    var temp = func.main(a);
+
+    var result = JSON.stringify(temp);
     var { authorization } = req.headers;
     res.send({
-      b,
+      result,
       authorization,
     });
   });

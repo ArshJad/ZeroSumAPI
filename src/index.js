@@ -13,9 +13,10 @@ app.get('/', (req, res) => {
 
 app.post('/zero-sum', (req, res) => {
     var a = parseInt(req.body.n);
+    
     var temp = func.main(a);
-
     var result = JSON.stringify(temp);
+
     var { authorization } = req.headers;
     res.send({
       result,
